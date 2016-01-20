@@ -97,6 +97,7 @@
                 <h1>Linear Optimization</h1>
                 Before we jump right into the simplex method itself, let us go through a brief explanation, what linear optimization (also called linear programming) actually is. The procedure itself is based around maximizing / minimizing the outcome of various mathematical scenarios, represented by linear relationships.
                	<br>
+               	<br>
                	Suitable examples might be: 
                	<br>
                	<li>maximizing profit of production</li>
@@ -106,10 +107,23 @@
                	The mathematical scenarios, which are to be solved via linear optimization, have important aspects worth explaining:
                	<br>
                	<ol style="list-style: decimal inside;">
-		<li>Constraints – limits or boundaries of the given scenario</li>
-		<li>Second item</li>
-		<li>Third item</li>
+	       		<li class="list-group-item">
+	            		<p>Constraints – limits or boundaries of the given scenario</p>
+	            		<li>e.g. amount of resources, amount of time, etc.</li>
+	            		<li>represented via linear equations or inequalities</li>
+	            		<li>are used to determine the feasible region</li>
+	        	</li>
+	        	<li class="list-group-item">
+	            		<p>Feasible Region – a set of all possible values, that satisfy all given constraints</p>
+	            		<li>represented by a convex polytope</li>
+	            		<li>flat-sided n-dimensional geometric shape</li>
+	            		<li>no internal angle is greater than 180°</li>
+	            		<li>no line connecting any points inside goes outside the region</li>
+	        	</li>
 		</ol>
+		<br>
+		<br>
+		Of course Simplex is not the only algorithm known to be used for linear programming, other notable ones are: criss-cross algorithm, ellipsoid algorithm, projective algorithm and path-following algorithm.
             </div>
         </div>
         <!-- /.row -->
