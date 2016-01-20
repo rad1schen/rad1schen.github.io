@@ -109,21 +109,42 @@
                	<ol style="list-style: decimal inside;">
 	       		<li class="list-group-item">
 	            		<p>Constraints – limits or boundaries of the given scenario</p>
+	            		<ol class="list-group">
 	            		<li>e.g. amount of resources, amount of time, etc.</li>
 	            		<li>represented via linear equations or inequalities</li>
 	            		<li>are used to determine the feasible region</li>
+	            		</ol>
 	        	</li>
 	        	<li class="list-group-item">
 	            		<p>Feasible Region – a set of all possible values, that satisfy all given constraints</p>
+	            		<ol class="list-group">
 	            		<li>represented by a convex polytope</li>
 	            		<li>flat-sided n-dimensional geometric shape</li>
 	            		<li>no internal angle is greater than 180°</li>
 	            		<li>no line connecting any points inside goes outside the region</li>
+	            		</ol>
 	        	</li>
 		</ol>
 		<br>
 		<br>
 		Of course Simplex is not the only algorithm known to be used for linear programming, other notable ones are: criss-cross algorithm, ellipsoid algorithm, projective algorithm and path-following algorithm.
+		<br>
+		<br>
+		<h1>Simplex Method</h1>
+		<br>
+		As was already mentioned, the simplex method is used for linear optimization and is claimed to be among the most popular algorithms available. This might be due to the following aspects:
+		<p>PRO's:</p>
+		<ol class="list-group">
+	            		<li>Relatively easy to implement</li>
+	            		<li>Easy to use</li>
+	            		<li>Practice efficiency in areas such as Production Management, Distribution, Finance</li>
+	        </ol>
+	        <p>CON's:</p>
+		<ol class="list-group">
+	            		<li>Worst case complexity almost never occurs- but would lead to exponential compute time</li>
+	            		<li>Calculation – heavy if calculated manually</li>
+	            		<li>Only specific scenario limitations</li>
+	        </ol>
             </div>
         </div>
         <!-- /.row -->
