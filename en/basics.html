@@ -90,9 +90,41 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-12 text-center">
-                Explain the Simplex algortihm here!
-				Erklären Sie den Simplex Algorithmus anhand eines händisch durchgerechneten Beispieles.
+            <div class="col-sm-12 text-left">
+                <ol style="list-style: decimal inside;">
+	       		<li class="list-group-item">
+	            		<p>What needs to be done first, is the setting of the constraints</p>
+	        	</li>
+	        	<li class="list-group-item">
+	            		<p>After the first necessary step, we begin shaping the Standard form</p>
+	            		<ol class="list-group">
+	            		<li>creation is only allowed by setting constraints</li>
+	            		</ol>
+	        	</li>
+	        	<li class="list-group-item">
+	            		<p>Followed by creating the Extended Standard Form</p>
+	            		<ol class="list-group">
+	            		<li>formed via introduction of Slack/Surplus variables</li>
+	            		<li>represented by fulfilling the following rules:</li>
+	            		<li>--Non-negative constraints of all variables</li>
+	            		<li>--All remaining constraints expressed as equalities</li>
+	            		<li>--RHS vector being non-negative</li>
+	            		</ol>
+	        	</li>
+	        	<li class="list-group-item">
+	            		<p>Forming the Canonic “Simplex” Tableau</p>
+	        	</li>
+	        	<li class="list-group-item">
+	            		<p>Performing pivot operations</p>
+	            		<ol class="list-group">
+	            		<li>choosing the pivot column (via most negative number in the bottom row)</li>
+	            		<li>choosing the pivot row (via dividing RHS by the row value and choosing the lowest result)</li>
+	            		<li>making these two into the pivot (or pivoting point) and turning its value to 1</li>
+	            		<li>making every value “above” and “below” to 0</li>
+	            		<li>repeating this cycle until there are no negative numbers in the bottom row</li>
+	            		</ol>
+	        	</li>
+		</ol>
             </div>
         </div>
         <!-- /.row -->
