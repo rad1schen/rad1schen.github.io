@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Redirecting..</title>
+<script src="js/jquery.js"></script>
+</head>
+
+<body>
+
+	<script>
+		$(document).ready(function (){
+			var userLang = navigator.language || navigator.userLanguage;
+			if (userLang == "de") {
+				window.location.href = "de/index.html";
+			} else if (userLang == "sk") {
+				window.location.href = "sk/index.html"
+			}
+			else {
+				window.location.href = "en/index.html"
+			}
+		});
+	</script>
+
+</body>
+
+</html>
