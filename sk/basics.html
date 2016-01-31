@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -75,32 +75,32 @@
             </div>
             <div class="col-lg-12">
                 <ol>
-					<li>What needs to be done first, is the setting of the constraints</li>
-					<li>After the first necessary step, we begin shaping the Standard form
+					<li>Najprv treba stanoviť obmedzenia</li>
+					<li>Po prvom potrebnom kroku, začneme s tvorbou Štandardnej Formy
 						<ul>
-							<li>creation is only allowed by setting constraints</li>
+							<li>umožnené len vďaka obmedzeniam</li>
 						</ul>
 					</li>
-					<li>Followed by creating the Extended Standard Form
+					<li>Nasleduje utvorenie Rozšírenej Štandardnej Formy
 	            		<ul>
-							<li>formed via introduction of Slack/Surplus variables</li>
-							<li>represented by fulfilling the following rules:
+							<li>skrz implementáciu slack / surplus premenných</li>
+							<li>skrz splnenie nasledujúcich pravidiel:
 								<ul class="list-unstyled">
-									<li>x Non-negative constraints of all variables</li>
-									<li>x All remaining constraints expressed as equalities</li>
-									<li>x RHS vector being non-negative</li>
+									<li>x Nie-negatívne obmedzenia všetkých premenných</li>
+									<li>x Všetky obmedzenia vyjadrené v rovniciach</li>
+									<li>x Vektor PS musí byť nie-negatívny</li>
 								</ul>
 							</li>
 	            		</ul>
 					</li>
-					<li>Forming the Canonic “Simplex” Tableau</li>
-					<li>Performing pivot operations
+					<li>Utvorenie Simplexovej Tabuľky</li>
+					<li>Používanie pivotných operácií
 	            		<ul>
-							<li>choosing the pivot column (via most negative number in the bottom row)</li>
-							<li>choosing the pivot row (via dividing RHS by the row value and choosing the lowest result)</li>
-							<li>making these two into the pivot (or pivoting point) and turning its value to 1</li>
-							<li>making every value “above” and “below” to 0</li>
-							<li>repeating this cycle until there are no negative numbers in the bottom row</li>
+							<li>voľba pivotného stĺpca (najnegatívnejšie číslo v spodnom riadku)</li>
+							<li>voľba pivotného riadku (najnižší výsledok delenia PS hodnotou v riadku)</li>
+							<li>zmena hodnoty pivotného bodu na 1</li>
+							<li>zmena každej hodnoty nad a pod pivotom na 0</li>
+							<li>opakovanie cyklu až kým v spodnom rade nie je žiadne negatívne číslo</li>
 	            		</ol>
 					</li>
 	        	</ol>
@@ -109,26 +109,26 @@
                 <h3 class="page-header">Now a little example..</h3>
             </div>
             <div class="col-lg-12">
-				Our business delivers 3 kinds of products, with the price:
+				Naša firma dodáva 3 druhy produktov:
 				<ul>
 					<li><strong>A: 7€</strong></li>
 					<li><strong>B: 8€</strong></li>
 					<li><strong>C: 10€</strong></li>
 				</ul>
-				Fabrication time (up to maximum of 1000 hours) for each product:
+				Čas potrebný na výrobu (maximum 1000 hodín):
 				<ul>
 					<li><strong>A: 2h</strong></li>
 					<li><strong>B: 3h</strong></li>
 					<li><strong>C: 2h</strong></li>
 				</ul>
-				Assembly time (up to maximum of 800 hours) for each product:
+				Čas potrebný na zloženie (maximum 800 hodín):
 				<ul>
 					<li><strong>A: 1h</strong></li>
 					<li><strong>B: 1h</strong></li>
 					<li><strong>C: 2h</strong></li>
 				</ul>
-				<h4>Solving process:</h4>
-				What needs to be done first, is determining the to-be-optimized scenario and constraints, which leads us to the following Standard Form:
+				<h4>Proces riešenia:</h4>
+				Čo musí byť urobené ako prvé, je stanovenie si scenáru, ktorý chceme optimalizovať, a jeho obmedzení, ktoré nás dovedú k Štandardnej Forme:
 			</div>
 			<div class="col-lg-6">
 				<div class="jumbotron">
@@ -138,11 +138,11 @@
 				</div>
 			</div>
 			<div class="col-lg-12">
-				From there, we can continue to create the Extended Standard Form, by fulfilling the following rules:
+				Z toho možno utvoriť Rozšírenú Štandardnú Formu, splnením nasledovných kriterií:
 				<ol>
-					<li>Non-negative constraints of all variables</li>
-					<li>All remaining constraints expressed as equalities</li>
-					<li>RHS vector being non-negative</li>
+					<li>Obmedzenia premenných nesmú byť negatívne</li>
+					<li>Všetky obmedzenia reprezentované ako rovnice</li>
+					<li>Vektor pravej strany musí byť pozitívny</li>
 				</ol>
 			</div>
 			<div class="col-lg-6">
@@ -153,14 +153,14 @@
 				</div>
 			</div>
 			<div class="col-lg-12">
-				After that, we form the Canonic „Simplex“ Tableau and start performing the pivot operations.
+				Potom sa vytvorí Simplexová Tabuľka a začne sa s pivotovými operáciami:
 				<ol>
-					<li>pivot column (most negative bottom row number) -> -10, column number 3</li>
-					<li>pivot row (lowest result of RHS divided by row value) -> 2, row number 2
+					<li>Pivotný stĺpec (najnegatívnejšie č. v spodnom rade) -> -10, column number 3</li>
+					<li>Pivotný rad (najnižší výsledok PS delenej hodnoty v riadku) -> 2, row number 2
 						<ul>
 							<li>1000:2=500</li>
 							<li>800:2=400</li>
-							<li>*red always indicates pivot values*</li>
+							<li>*červená označuje pivotné hodnoty*</li>
 						</ul>
 						<table class="tg">
 							  <tr>
@@ -205,7 +205,7 @@
 							  </tr>
 						</table>
 					</li>
-					<li>Change the pivot row value to 1 via <math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>1</mn><mn>2</mn></mfrac><msub><mi>R</mi><mn>2</mn></msub><mo>&#x02192;</mo><msub><mi>R</mi><mn>2</mn></msub></math>
+					<li>Zmeníme hodnotu pivotného radu na 1 skrz <math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>1</mn><mn>2</mn></mfrac><msub><mi>R</mi><mn>2</mn></msub><mo>&#x02192;</mo><msub><mi>R</mi><mn>2</mn></msub></math>
 						<table class="tg">
 							  <tr>
 								<th class="tg-rqw6"></th>
@@ -249,7 +249,7 @@
 							  </tr>
 						</table>
 					</li>
-					<li>Transforming everything above and below the 1 to 0 first via <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>-</mo><mn>2</mn><mi>R</mi><mn>2</mn><mo>&#x000A0;</mo><mo>+</mo><mo>&#x000A0;</mo><mi>R</mi><mn>1</mn><mo>&#x000A0;</mo><mo>&#x02192;</mo><mo>&#x000A0;</mo><mi>R</mi><mn>1</mn></math>
+					<li>Premeníme všetko nad a pod 1 na 0 najprv skrz <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>-</mo><mn>2</mn><mi>R</mi><mn>2</mn><mo>&#x000A0;</mo><mo>+</mo><mo>&#x000A0;</mo><mi>R</mi><mn>1</mn><mo>&#x000A0;</mo><mo>&#x02192;</mo><mo>&#x000A0;</mo><mi>R</mi><mn>1</mn></math>
 						<table class="tg">
 							  <tr>
 								<th class="tg-rqw6"></th>
@@ -293,9 +293,9 @@
 							  </tr>
 						</table>
 					</li>
-					<li>And then via <math xmlns="http://www.w3.org/1998/Math/MathML"><mn>10</mn><mi>R</mi><mn>2</mn><mo>&#x000A0;</mo><mo>+</mo><mo>&#x000A0;</mo><mi>R</mi><mn>3</mn><mo>&#x000A0;</mo><mo>&#x02192;</mo><mo>&#x000A0;</mo><mi>R</mi><mn>3</mn></math></li>
-					<li>Replacing the pivot row variable with the pivot column variable</li>
-					<li>Repeating the whole process by choosing a new pivot column and row
+					<li>A potom <math xmlns="http://www.w3.org/1998/Math/MathML"><mn>10</mn><mi>R</mi><mn>2</mn><mo>&#x000A0;</mo><mo>+</mo><mo>&#x000A0;</mo><mi>R</mi><mn>3</mn><mo>&#x000A0;</mo><mo>&#x02192;</mo><mo>&#x000A0;</mo><mi>R</mi><mn>3</mn></math></li>
+					<li>Nahradíme premennú pivotného radu za premennú pivotného stĺpca</li>
+					<li>Opakujeme process pre nový pivotný st
 						<table class="tg">
 							  <tr>
 								<th class="tg-rqw6"></th>
@@ -428,7 +428,7 @@
 							  </tr>
 						</table>
 					</li>
-					<li>Again, repeating the whole pivot operations process
+					<li>Opäť, opakujeme process pre nový stĺpec a rad
 						<table class="tg">
 							  <tr>
 								<th class="tg-rqw6"></th>
@@ -561,18 +561,18 @@
 							  </tr>
 						</table>
 					</li>
-					<li>Look at the LHS variables and set them to RHS values
+					<li>Premenným na LS pripíšeme hodnotu na PS
 						<ul>
 							<li>x1 = 200</li>
 							<li>x3 = 300</li>
 						</ul>
 					</li>
-					<li>Look at the value in the lower right corner
+					<li>Hodnota v pravom dolnom rohu
 						<ul>
 							<li>p = 4400</li>
 						</ul>
 					</li>
-					<li>Set other values to 0
+					<li>Zvyšku dame hodnotu 0
 						<ul>
 							<li>x2 = 0</li>
 							<li>s1 = 0</li>
@@ -581,7 +581,7 @@
 					</li>
 				</ol>
 				<br>
-				This leads to the solution of maximum profit of 4400EUR in the scenario of creating 200 pieces of product A, 0 pieces of product B, 300 pieces of product C, with both slack assembly and slack fabrication time being 0.					
+				Toto vedie k výsledku, že maximálny profit 4400EUR dosiahneme pri výrobe 200 kusov produktu A, 0 kusov produktu B, 300 kusov produktu C, so zvyšnými hodnotami pre zloženie aj výrobu 0.					
 			</div>
         </div>
     </div>

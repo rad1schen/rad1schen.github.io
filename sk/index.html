@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 
 <head>
 
@@ -82,74 +82,69 @@
 
         <div class="row">
 			<div class="col-lg-12">
-                <h1 class="page-header">Introduction</h1>
+                <h1 class="page-header">Úvod</h1>
             </div>
             <div class="col-lg-12">
-                Simplex algorithm (also called simplex method), discovered by George B. Dantzig in 1947, is a way of solving linear optimization problems.
+                Simplexov algoritmus (taktiež nazývaný simplexová metóda), objavená r. 1947 Goergeom B. Dantzigom, je spôsob riešenia problematiky lineárnej optimalizacie.
             </div>
 			<div class="col-lg-12">
-                <h3 class="page-header">Linear Optimization</h3>
+                <h3 class="page-header">Lineárna Optimalizacia</h3>
             </div>
 			<div class="col-lg-12">
-                Before we jump right into the simplex method itself,
-				let us go through a brief explanation,
-				what linear optimization (also called linear programming) actually is.
-				<br>
-				The procedure itself is based around maximizing / minimizing the outcome of various mathematical scenarios,
-				represented by linear relationships.
+                Skôr, než sa pustíme do samotnej simplexovej metódy, pozrime sa stručne na to, čo vlastne lineárna optimalizacia (taktiež zvaná lineárne programovanie) vlastne je. Proces samotný je založený na maximalizacii / minimalizácii výsledkov rôznych matematických scenárov, reprezentovaných lineárnymi vzťahmi.
                	<br>
-               	Suitable examples might be:
+               	Vhodnými príkladmi sú:
                	<br>
 				
 				<ul>
-					<li>maximizing profit of production</li>
-					<li>maximizing (and hence optimizing) resource usage</li>
-					<li>minimizing costs (production, delivery, etc.)</li>
+					<li>maximalizácia profitu produkcie</li>
+					<li>maximalizácia (a následná optimalizácia) využitia zdrojov</li>
+					<li>minimalizácia nákladov (produkcie, dodávania atď.)</li>
 				</ul>
                	
 				<br>
-               	The mathematical scenarios, which are to be solved via linear optimization, have important aspects worth explaining:
+               	Matematicke scenáre, ktoré majú byť riešené skrz lineárnu optimalizáciu, majú dôležité aspekty hodné vysvetlenia:
 				<br>
 				
                	<ol>
-					<li><strong>Constraints</strong> – limits or boundaries of the given scenario
+					<li><strong>Obmedzenia</strong> – ohraničujú daný scenár
 						<ul>
-							<li>e.g. amount of resources, amount of time, etc.</li>
-							<li>represented via linear equations or inequalities</li>
-							<li>are used to determine the feasible region</li>
+							<li>napr. Počet zdrojov, času, atď.</li>
+							<li>v podobe lineárnych rovníc alebo nerovníc</li>
+							<li>používané na stanovenie oblasti riešení</li>
 						</ul>
 					</li>
-					<li><strong>Feasible Region</strong> – a set of all possible values, that satisfy all given constraints
+					<li><strong>Oblasť riešení</strong> – skupina možných hodnôt, ktoré uspokojujú dané obmedzenia
 						<ul>
-							<li>represented by a convex polytope</li>
-							<li>flat-sided n-dimensional geometric shape</li>
-							<li>no internal angle is greater than 180°</li>
-							<li>no line connecting any points inside goes outside the region</li>
+							<li>skupina možných hodnôt, ktoré uspokojujú dané obmedzenia</li>
+							<li>plochostenný n-dimenzný geometrický útvar</li>
+							<li>žiaden vnútorný uhol nepresahuje 180°</li>
+							<li>čiara medzi dvoma ľubovolnými vnútornými bodmi nepresahuje hranice oblasti</li>
 						</ul>
 					</li>
 				</ol>
 				
 				<br>
-				Of course Simplex is not the only algorithm known to be used for linear programming, other notable ones are: criss-cross algorithm, ellipsoid algorithm, projective algorithm and path-following algorithm.
+				Samozrejme, simplex nie je jediným algoritmom pre lineárnu optimizáciu, zvyšné sú: criss-cross, ellipsoid, projective and path-following.
 				
 			</div>
 			<div class="col-lg-12">
-                <h3 class="page-header">Simplex Method</h3>
+                <h3 class="page-header">Simplexová Metóda</h3>
             </div>
 			<div class="col-lg-12">
-				As was already mentioned, the simplex method is used for linear optimization and is claimed to be among the most popular algorithms available. This might be due to the following aspects:
+				Ako už bolo spomenuté, simplexová metóda je používaná pre lineárnu optimalizaciu a pokladá sa za najviac populárnu z vyššie uvedených algoritmov, kvoli nasledovným aspektom::
 				<br>
-				<p><h5><strong>PRO:</strong></h5></p>
+				<p><h5><strong>PRE:</strong></h5></p>
 					<ul>
-						<li>Relatively easy to implement</li>
-						<li>Easy to use</li>
-						<li>Practice efficiency in areas such as Production Management, Distribution, Finance</li>
+						<li>relatívne jednoduchá implementácia</li>
+						<li>jednoduché používanie</li>
+						<li>praktická účinnosť- v oblastiach ako Manažment Produkcie, Distribúcia, Financie</li>
 					</ul>
-				<p><h5><strong>CONTRA:</strong></h5></p>
+				<p><h5><strong>PROTI:</strong></h5></p>
 					<ul>
-	            		<li>Worst case complexity almost never occurs- but would lead to exponential compute time</li>
-	            		<li>Calculation – heavy if calculated manually</li>
-	            		<li>Only specific scenario limitations</li>
+	            		<li>Komplexita v najhoršom scenári sa skoro nikdy nestáva- ale viedla by k exponenciálnemu výpočtovému času</li>
+	            		<li>výpočtová náročnost (manuálna)</li>
+	            		<li>limitácie skrz špecifické scenáre</li>
 					</ul>
 					
             </div>

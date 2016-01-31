@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
 
@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	
-	<title>Simplex - Geogebra</title>
+	<title>Simplex - Excel-Tutorial</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">Navigation umschalten</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -42,32 +42,32 @@
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="basics.html">Basics</a>
+                        <a href="basics.html">Grundlagen</a>
                     </li>
                     <li>
-                        <a href="example.html">Example</a>
-                    </li>
-					<li>
-                        <a href="tutorial.html">Excel-Tutorial</a>
+                        <a href="example.html">Beispiel</a>
                     </li>
                     <li class="active">
+                        <a href="tutorial.html">Excel-Tutorial</a>
+                    </li>
+                    <li>
                         <a href="geogebra.html">Geogebra</a>
                     </li>
 					<li>
-                        <a href="program.html">C++ Program</a>
+                        <a href="program.html">C++ Programm</a>
                     </li>
 					<li>
-                        <a href="about.html">About Us</a>
+                        <a href="about.html">Über uns</a>
                     </li>
                 </ul>
 				
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Languages <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Languages<span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="../de/geogebra.html"><span class="flag-icon flag-icon-de"></span> Deutsch</a></li>
-							<li><a href="../en/geogebra.html"><span class="flag-icon flag-icon-gb"></span> English</a></li>
-							<li><a href="../sk/geogebra.html"><span class="flag-icon flag-icon-sk"></span> slovenský</a></li>
+							<li><a href="../de/tutorial.html"><span class="flag-icon flag-icon-de"></span> Deutsch</a></li>
+							<li><a href="../en/tutorial.html"><span class="flag-icon flag-icon-gb"></span> English</a></li>
+							<li><a href="../sk/tutorial.html"><span class="flag-icon flag-icon-sk"></span> slovenský</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -79,29 +79,9 @@
 
     <!-- Page Content -->
     <div class="container">
-	
-		<div class="row">
-	
-			<div id="loading" style="color:red">Loading Geogebra...</div>
-			
-			<div id="applet_container1"></div>
-			
-			<script type="text/javascript">
 
-
-				window.onload = function() {
-					gg = new GGBApplet({material_id: "2488601"}, true);
-					gg.inject('applet_container1', 'preferHTML5');
-				};
-				function  ggbOnInit()
-				{
-					$('#loading').hide();
-				}
-
-			</script>
-			<br>
-			In this Example GeoGebra-Graph you can see that the objective function approaches the optimum.
-		</div>
+        Hello!
+        <!-- /.row -->
 
     </div>
     <!-- /.container -->
@@ -111,9 +91,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
-    
-    <!-- GeoGebra JavaScript -->
-    <script type="text/javascript" src="http://www.geogebratube.org/scripts/deployggb.js"></script>
 
 </body>
 

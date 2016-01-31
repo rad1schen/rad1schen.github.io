@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	
-	<title>Simplex - Geogebra</title>
+	<title>Simplex - About Us</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +20,7 @@
 	
 	<!-- Custom CSS -->
 	<link href="../css/custom.css" rel="stylesheet">
+	<link href="../css/round-about.css" rel="stylesheet">
 
 </head>
 
@@ -47,16 +48,16 @@
                     <li>
                         <a href="example.html">Example</a>
                     </li>
-					<li>
+                    <li>
                         <a href="tutorial.html">Excel-Tutorial</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="geogebra.html">Geogebra</a>
                     </li>
 					<li>
                         <a href="program.html">C++ Program</a>
                     </li>
-					<li>
+					<li class="active">
                         <a href="about.html">About Us</a>
                     </li>
                 </ul>
@@ -65,9 +66,9 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Languages <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="../de/geogebra.html"><span class="flag-icon flag-icon-de"></span> Deutsch</a></li>
-							<li><a href="../en/geogebra.html"><span class="flag-icon flag-icon-gb"></span> English</a></li>
-							<li><a href="../sk/geogebra.html"><span class="flag-icon flag-icon-sk"></span> slovenský</a></li>
+							<li><a href="../de/about.html"><span class="flag-icon flag-icon-de"></span> Deutsch</a></li>
+							<li><a href="../en/about.html"><span class="flag-icon flag-icon-gb"></span> English</a></li>
+							<li><a href="../sk/about.html"><span class="flag-icon flag-icon-sk"></span> slovenský</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -79,41 +80,55 @@
 
     <!-- Page Content -->
     <div class="container">
-	
-		<div class="row">
-	
-			<div id="loading" style="color:red">Loading Geogebra...</div>
-			
-			<div id="applet_container1"></div>
-			
-			<script type="text/javascript">
 
-
-				window.onload = function() {
-					gg = new GGBApplet({material_id: "2488601"}, true);
-					gg.inject('applet_container1', 'preferHTML5');
-				};
-				function  ggbOnInit()
-				{
-					$('#loading').hide();
-				}
-
-			</script>
-			<br>
-			In this Example GeoGebra-Graph you can see that the objective function approaches the optimum.
-		</div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Our Team</h2>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="../img/karaba.jpg" alt="">
+                <h3>Karaba Roman
+                    <small>Presenter</small>
+                </h3>
+                <p>20% Implementation; 50% Slides and 50% 1st Presentation; 50% 2nd Presentation</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="../img/mangat.jpg" alt="">
+                <h3>Mangat Amolkirat Singh
+                    <small>Mastermind</small>
+                </h3>
+                <p>95% Paper; 5% Website</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
+                <h3>Peschl Milan
+                    <small>Content Expert</small>
+                </h3>
+                <p>50% Slides and 50% 1st Presentation; 5% Paper; 45% Website</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
+                <h3>Raditsch Raphael
+                    <small>Website Engineer</small>
+                </h3>
+                <p>50% Slides and 50% 2nd Presentation; 50% Website</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
+                <h3>Suarez Anuar Yesid
+                    <small>C++ Wizard</small>
+                </h3>
+                <p>80% Implementation; 50% 2nd Presentation Slides</p>
+            </div>
+        </div>
 
     </div>
-    <!-- /.container -->
 
     <!-- jQuery Version 1.11.1 -->
     <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
-    
-    <!-- GeoGebra JavaScript -->
-    <script type="text/javascript" src="http://www.geogebratube.org/scripts/deployggb.js"></script>
 
 </body>
 

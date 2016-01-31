@@ -31,16 +31,26 @@ Tableau::Tableau(int n, double *c, int k, double **A, double *b) {
         for (int j = 0; j < n; ++j)
             tableauArray[i][j] = A[i-1][j];
 }
-
+/*
+ * @~Tableau() deletes the allocated two dimensional array in our class
+ */
 Tableau::~Tableau() {
     for (int i = 0; i < tableauRows; ++i)
         delete tableauArray[i];
 
     delete tableauArray;
 }
+
 /*
- * Ueberprueft ob das Optimum schon erreicht wurde.
- * Falls das Optimum nicht erreicht wurde, wird die Pivotspalte festgelegt
+ * @checkOptimum() chcecks the tableau for the optimal state and returns
+ * a boolean (@optimum) value.
+ * @min - variable used for comparison of elements in the last row (first row in our code)
+ *
+ * Detailed description:
+ *      We iterate trough the elements and if we find a value that's lower than 0 and
+ *      save it into our min variable. We continue on comparing until we find the most negative one
+ *      and change the optimum value to false since the optimal state was not found.
+ *      The most negative value defines the pivotColumn, therefore we assign in to our pivotColumn variable
  */
 bool Tableau::checkOptimum() {
 
@@ -56,11 +66,17 @@ bool Tableau::checkOptimum() {
 
     return optimum;
 }
+
 /*
- * Pivotreihe suchen und damit das Pivotelement bestimmen
+ * @findPivot() searches for the pivotRow and pivotElement
+ *
+ * Detailed description:
+ *      Since the pivot column is already known to us from the previous function, we need
+ *      to find the pivot row. From the moment we know which row is the pivot row
+ *      and which column is the pivot column, we can identify the pivot element
+ *      and assign it into the pivotElement variable.
  */
 void Tableau::findPivot() {
-
     double min = -1;
 
     for (int i = 1; i < tableauRows; ++i)
@@ -74,11 +90,14 @@ void Tableau::findPivot() {
         }
 
     pivotElement = tableauArray[pivotRow][pivotColumn];
-
 }
-
 /*
- * Hier wird ein Simplex Schritt ausgefuehrt, d.h. alle Elemente im Simplextableau werden neu berechnet
+ * @simplexStep() executes one step of the simplex algorithm and recalculates all elements in the tableau
+ *
+ * Detailed description:
+ *      The first nested loop computes all table elements, excluding the pivot row and pivot column elements.
+ *      We used a formula from the lecture documents for this recalculation. In the following loops we, calculate
+ *      the pivot row elements and set the pivot column elements to 0 excluding the pivot element itself.
  */
 void Tableau::simplexStep() {
     for (int i = 0; i < tableauRows; ++i)
@@ -92,7 +111,14 @@ void Tableau::simplexStep() {
             tableauArray[i][pivotColumn] = 0;
 }
 /*
- * Gibt ein Array mit den Lösungswerten der Basisvariablen und dem optimalen Wert der Zielfunktion aus.
+ * @solution() returns an array with the solution to the basic
+ * variables and the optimal value to the objective function.
+ *
+ * Detailed description:
+ *      To create the solution array, we take the number of columns and subtract the number
+ *      of rows in the tableau to calculate its size. This works since the initial array is
+ *      enlarged by the addition of slack variables.
+ *      The feasibility of the results is checked as well and returned afterwards
  */
 double* Tableau::solution() {
     int n = tableauColumns - tableauRows;
@@ -103,7 +129,6 @@ double* Tableau::solution() {
         solution[i] = 0;
 
     solution[n] = tableauArray[0][tableauColumns-1];
-
 
     for (int i = 0; i < n; ++i) {
         int row = -1;
@@ -118,26 +143,24 @@ double* Tableau::solution() {
             }
 
         cout << "" << endl;
-
         if(valid_solution)
             solution[i] = tableauArray[row][tableauColumns-1];
     }
-
-
     return solution;
 }
 /*
- * Gibt das Tableau aus
+ * @printTableau() prints the values of the tableau Array into the console
+ *
+ * Detailed description:
+ *      A simple nested loop is used to iterate trough each index field of the array,
+ *      and each value is printed out in the console.
  */
 void Tableau::printTableau() {
-
     for (int i = 0; i < tableauRows; ++i) {
         for (int j = 0; j < tableauColumns; ++j) {
             cout << right << setw(6) << setfill(' ') << tableauArray[i][j];
         }
         cout << endl;
     }
-
     cout << endl << endl;
-
 }
