@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Simplex Algorithm for the course 'Optimierung und Simulation' at the University of Vienna in the winter term 2015/2016, Group 2, Team 1">
+    <meta name="author" content="Raphael Raditsch">
 	
 	<title>Simplex - Geogebra</title>
 
@@ -15,8 +15,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 	
 	<!-- Flags -->
-	<link href="../assets/docs.css" rel="stylesheet">
-    <link href="../css/flag-icon.css" rel="stylesheet">
+    <link href="../css/flag-icon.min.css" rel="stylesheet">
 	
 	<!-- Custom CSS -->
 	<link href="../css/custom.css" rel="stylesheet">
@@ -28,7 +27,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
                     <span class="sr-only">Navigation umschalten</span>
@@ -38,7 +37,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">Simplex Algorithmus</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
@@ -47,14 +46,14 @@
                     <li>
                         <a href="example.html">Beispiel</a>
                     </li>
-					<li>
-                        <a href="tutorial.html">Excel-Tutorial</a>
-                    </li>
                     <li class="active">
                         <a href="geogebra.html">Geogebra</a>
                     </li>
 					<li>
                         <a href="program.html">C++ Programm</a>
+                    </li>
+					<li>
+                        <a href="download.html">Download</a>
                     </li>
 					<li>
                         <a href="about.html">Über uns</a>
@@ -63,7 +62,7 @@
 				
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Languages <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sprachen <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="../de/geogebra.html"><span class="flag-icon flag-icon-de"></span> Deutsch</a></li>
 							<li><a href="../en/geogebra.html"><span class="flag-icon flag-icon-gb"></span> English</a></li>
@@ -72,9 +71,9 @@
 					</li>
 				</ul>
             </div>
-            <!-- /.navbar-collapse -->
+
         </div>
-        <!-- /.container -->
+
     </nav>
 
     <!-- Page Content -->
@@ -90,7 +89,7 @@
 
 
 				window.onload = function() {
-					gg = new GGBApplet({material_id: "2488601"}, true);
+					gg = new GGBApplet({material_id: "489"}, true);
 					gg.inject('applet_container1', 'preferHTML5');
 				};
 				function  ggbOnInit()
@@ -99,12 +98,22 @@
 				}
 
 			</script>
+			<em>Copyright Kathryn Brenneman; Gefunden auf <a target="_blank" href="https://tube.geogebra.org/material/show/id/489">https://tube.geogebra.org/material/show/id/489</a></em>
 			<br>
-			In diesem Beispiel-GeoGebra-Graphen sieht man wie sich die Zielfunktion dem Optimum annähert.
+			<br>
+			In dieser interaktiven GeoGebra-Applikation kann man mithilfe des Sliders die Zielfunktion langsam an das Optimum annähern, bis es schließlich dieses erreicht.
+			<br>
+			Hier kann man gut sehen wie die verschiedenen Bedingungen das Polytop bilden und man mithilfe des Simplex-Algorithmus auf eine Lösung kommt.
 		</div>
 
     </div>
-    <!-- /.container -->
+	
+	<!-- Footer -->
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">&copy; For the course 'Optimierung und Simulation' at the University of Vienna in the winter term 2015/2016, Group 2, Team 1</p>
+      </div>
+    </footer>
 
     <!-- jQuery Version 1.11.1 -->
     <script src="../js/jquery.js"></script>

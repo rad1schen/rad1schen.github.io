@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Simplex Algorithm for the course 'Optimierung und Simulation' at the University of Vienna in the winter term 2015/2016, Group 2, Team 1">
+    <meta name="author" content="Raphael Raditsch">
 	
 	<title>Simplex - Beispiel</title>
 
@@ -15,8 +15,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 	
 	<!-- Flags -->
-	<link href="../assets/docs.css" rel="stylesheet">
-    <link href="../css/flag-icon.css" rel="stylesheet">
+    <link href="../css/flag-icon.min.css" rel="stylesheet">
 	
 	<!-- Custom CSS -->
 	<link href="../css/custom.css" rel="stylesheet">
@@ -48,13 +47,13 @@
                         <a href="example.html">Beispiel</a>
                     </li>
                     <li>
-                        <a href="tutorial.html">Excel-Tutorial</a>
-                    </li>
-                    <li>
                         <a href="geogebra.html">Geogebra</a>
                     </li>
 					<li>
                         <a href="program.html">C++ Programm</a>
+                    </li>
+					<li>
+                        <a href="tutorial.html">Download</a>
                     </li>
 					<li>
                         <a href="about.html">Über uns</a>
@@ -63,7 +62,7 @@
 				
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Languages <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sprachen <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="../de/example.html"><span class="flag-icon flag-icon-de"></span> Deutsch</a></li>
 							<li><a href="../en/example.html"><span class="flag-icon flag-icon-gb"></span> English</a></li>
@@ -81,65 +80,72 @@
     <div class="container">
         <div class="row">
 			<div class="col-lg-12">
-                <h1 class="page-header">Vitamin-Example</h1>
+                <h1 class="page-header">Vitamin-Beispiel</h1>
             </div>
-			<div class="col-lg-10">
+			<div class="col-lg-6">
 				<div class="jumbotron">
 					<img class="img-responsive" src="../img/vitamin.jpg" alt="Vitamin-Example"> 
 				</div>
-			<!--</div>
-            <div class="col-lg-6">-->
-				In the table above, there are multiple things to see:
+			</div>
+            <div class="col-lg-10">
+				In der Tabelle sind mehrere Dinge zu sehen:
 				<ol>
-					<li>The RDA (Recommended Daily Allowance) of various vitamins
+					<li>Die RDA (Recommended Daily Allowance) der verschiedenen Vitamine
 						<ul>
-							<li>representing the recommended daily dosage for healthy vitamin levels</li>
+							<li>stellen die empfohlene Tagesdosis für gesunde Menschen dar</li>
 						</ul>
 					</li>
-					<li>The different types of vitamins, which the example is dealing with</li>
-					<li>The amount of vitamins (in mg/kg) in 4 different types of food</li>
+					<li>Die verschiedenen Typen von Vitaminen welche dieses Beispiel beinhaltet</li>
+					<li>Die Menge von Vitaminen (in mg/kg) in 4 verschiedenen Lebensmitteln</li>
 				</ol>
 				
 				<br>
-				The question is: “If we would want to cover these vitamins with only the aid of these four kinds of food, what would be the optimal way to do so?”
+				Die Frage die sich stellt ist: “Wenn wir unseren Vitaminbedarf nur mit Hilfe dieser Lebensmittel decken wollten, was wäre der optimale Weg dafür?”
 				<br>
-				Now, how to proceed setting up the scenario? We may say, that the problem can be simplified expressed as “How much of what to eat?” and hence form the target formula:
+				Nun, wie gehen wir die Sache an? Wir könnten zum Beispiel sagen, dass man das Problem vereinfacht als "Wieviel von was müssen wir essen?" darstellen können, und damit die folgende Formel ableiten:
 				<br>
 				<p class="text-center"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi><mo>+</mo><mi>q</mi><mo>&#x02192;</mo><mtext>optimize</mtext></math></p>
-				Where “x, y, z, q” represent the amount of kilograms of each food consumed (multiplier is 1, since mg/1kg). But this needs to be transformed into a linear equation (with t representing the total amount of consumed food):
+				Dabei repräsentieren “x, y, z, q” die Menge an Kilogramm jedes Lebensmittels welches wir konsumieren (Multiplikator ist 1, weil mg/1kg). Aber diese Formel gehört natürlich in eine Lineare Gleichung umgewandelt (t ist die totale Menge an konsumierten Lebensmitteln):
 				<br>
 				<p class="text-center"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>-</mo><mi>x</mi><mo>-</mo><mi>y</mi><mo>-</mo><mi>z</mi><mo>-</mo><mi>q</mi><mo>+</mo><mi>t</mi><mo>=</mo><mn>0</mn></math></p>
-				The next step is to form the constraints, which are already represented by the table rows themselves. If the amounts of vitamins in each food type are to be taken and have the RDA as limitations, the constraints would look like:
+				Der nächste Schritt ist es die Bedingungen zu definieren, die durch die Tabellenzeilen selbst dargestellt werden. Wenn man die Menge an Vitaminen in jedem Lebensmittel und die RDA-Limitierungen in Betracht zieht, ergeben sich folgende Bedingungen:
 				<br>
 				<p class="text-center"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn><mo>,</mo><mn>9</mn><mi>x</mi><mo>+</mo><mn>8</mn><mi>y</mi><mo>+</mo><mn>0</mn><mo>,</mo><mn>4</mn><mi>z</mi><mo>+</mo><mn>9</mn><mo>,</mo><mn>7</mn><mi>q</mi><mo>&#x02264;</mo><mn>1</mn><mo>,</mo><mn>1</mn></math></p>
 				<p class="text-center"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>4</mn><mo>,</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn><mo>,</mo><mn>7</mn><mi>y</mi><mo>+</mo><mn>0</mn><mo>,</mo><mn>3</mn><mi>z</mi><mo>+</mo><mn>4</mn><mo>,</mo><mn>9</mn><mi>q</mi><mo>&#x02264;</mo><mn>1</mn><mo>,</mo><mn>4</mn></math></p>
 				<p class="text-center"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn><mo>,</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>1</mn><mo>,</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>1</mn><mi>z</mi><mo>+</mo><mn>10</mn><mi>q</mi><mo>&#x02264;</mo><mn>1</mn><mo>,</mo><mn>4</mn></math></p>
 				<p class="text-center"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>50</mn><mi>x</mi><mo>+</mo><mn>20</mn><mi>y</mi><mo>+</mo><mn>100</mn><mi>z</mi><mo>+</mo><mn>10</mn><mi>q</mi><mo>&#x02264;</mo><mn>80</mn></math></p>
 				<p class="text-center"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn><mi>x</mi><mo>+</mo><mn>15</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi><mo>+</mo><mn>15</mn><mi>q</mi><mo>&#x02264;</mo><mn>12</mn></math></p>
-				With these and the target function, we have constructed the Standard form, from where the next step is to create the Extended Standard form through the introduction of slack variables and fulfillment of the extended form rules mentioned in the other tutorials:
+				Mit diesen und der Zielfunktion, konstruieren wir uns die Standardform, von welcher wir im nächsten Schritt die Erweiterte Standardform durch Einführung der Schlupfvariablenblen und der Erfüllung der Regeln die vorher erwähnt wurden, ableiten:
 				<p class="text-center"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>-</mo><mi>x</mi><mo>-</mo><mi>y</mi><mo>-</mo><mi>z</mi><mo>-</mo><mi>q</mi><mo>+</mo><mi>t</mi><mo>=</mo><mn>0</mn></math></p>
 				<p class="text-center"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn><mo>,</mo><mn>9</mn><mi>x</mi><mo>+</mo><mn>8</mn><mi>y</mi><mo>+</mo><mn>0</mn><mo>,</mo><mn>4</mn><mi>z</mi><mo>+</mo><mn>9</mn><mo>,</mo><mn>7</mn><mi>q</mi><mo>+</mo><mi>s</mi><mn>1</mn><mo>=</mo><mn>1</mn><mo>,</mo><mn>1</mn></math></p>
 				<p class="text-center"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>4</mn><mo>,</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn><mo>,</mo><mn>7</mn><mi>y</mi><mo>+</mo><mn>0</mn><mo>,</mo><mn>3</mn><mi>z</mi><mo>+</mo><mn>4</mn><mo>,</mo><mn>9</mn><mi>q</mi><mo>+</mo><mi>s</mi><mn>2</mn><mo>=</mo><mn>1</mn><mo>,</mo><mn>4</mn></math></p>
 				<p class="text-center"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn><mo>,</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>1</mn><mo>,</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>1</mn><mi>z</mi><mo>+</mo><mn>10</mn><mi>q</mi><mo>+</mo><mi>s</mi><mn>3</mn><mo>=</mo><mn>1</mn><mo>,</mo><mn>4</mn></math></p>
 				<p class="text-center"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>50</mn><mi>x</mi><mo>+</mo><mn>20</mn><mi>y</mi><mo>+</mo><mn>100</mn><mi>z</mi><mo>+</mo><mn>10</mn><mi>q</mi><mo>+</mo><mi>s</mi><mn>4</mn><mo>=</mo><mn>80</mn></math></p>
 				<p class="text-center"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn><mi>x</mi><mo>+</mo><mn>15</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi><mo>+</mo><mn>15</mn><mi>q</mi><mo>+</mo><mi>s</mi><mn>5</mn><mo>=</mo><mn>12</mn></math></p>
-				The example was further solved via Excel Solver, which offers a rather quick and simple solving tool for linear programming, described on the picture below (the Q column serves as an explanation for the fields to the right -> opt and the green ones; x,y,z,q are set to 0).
+				Dieses Beispiel wird im weiteren Verlauf mittels des Excel Solver gelöst, welcher ein schnelles und einfaches Werkzeug ist um derartige lineare Probleme zu lösen. Im Bild darunter wird die Vorgangsweise beschrieben (die Q Spalte dient als Erklärung für die Felder rechts -> opt und die Grünen; x,y,z,q sind auf 0 gesetzt).
 				<img class="img-responsive" src="../img/excel1.jpg">
-				With this setup, we may proceed to using the Solver add-in (make sure you have it implemented in MS Excel: File -> Options -> Add-ins -> Solver Add-in -> Go -> check Solver Add-in box and add), found in DATA -> Solver.
+				Mit diesem Setup fahren wir fort und benutzen das Solver add-in (Zuerst überprüfen ob wir es installiert haben; MS Excel: Datei -> Optionen -> Add-ins -> Solver Add-in -> Gehe Zu -> Solver Add-in Box ankreuzen und mit OK bestätigen), welches wir im Reiter Daten -> Solver aufrufen.
 				<img class="img-responsive" src="../img/excel2.jpg">
-				Then, we add the Objective (in our case the opt cell), Variable cells (x,y,z,q cells) and Add constraints (green cells being less than red cells).
+				Danach fügen wir unser Ziel (in unserem Fall in der opt Zelle), die Variablen Zellen (x,y,z,q Zellen) und die Bedingungen (mehr grüne als rote Zellen) hinzu.
 				<img class="img-responsive" src="../img/excel3.jpg">
-				Adding Constraints:
+				Hinzufügen der Bedingungen:
 				<img class="img-responsive" src="../img/excel4.jpg">
-				After all has been setup, click Solve and OK in the next pop-up window. This presents the Solver solution of the problem:
+				Nachdem alles fertig eingestellt ist auf "Solve" drücken und mit OK im nächsten Fenster bestätigen. Das präsentiert uns dann die Solver Lösung des Problems:
 				<img class="img-responsive" src="../img/excel5.jpg">
-				(All values rounded to 2 decimal places) These values bring us to the conclusion that the supposed optimum is achieved via consuming 0,24kg of food type x (Champ.), 0,08kg of food type y (Erbsen), 0,67kg of food type z (Äpfel) and 0kg of food type q (Soja), bringing us to the total amount of food consumed -> 0,99kg.
+				(Alle Werte sind auf 2 Dezimalstellen gerundet) Diese Werte bringen uns zum Schluss, dass das Optimum des Lebensmittelkonsums sein sollte: 0,24kg des Lebensmittels x (Champignons), 0,08kg des Lebensmittels y (Erbsen), 0,67kg des Lebensmittels z (Äpfel) und 0kg des Lebensmittels q (Soja), summiert auf das Gewicht der Lebensmittel -> 0,99kg.
 				<br>
-				The slack variables represent the difference between the outcome vitamin value (green) and the RDA (red), being s1=0, s2=0, s3=0,47, s4=0 and s5=7,27.
+				Die Schlupfvariablen repräsentieren den Unterschied zwischen dem Ergebnis-Vitamin-Wert (grün) und der RDA (rot), diese sind s1=0, s2=0, s3=0,47, s4=0 und s5=7,27.
             </div>
         </div>
 
     </div>
+	
+	<!-- Footer -->
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">&copy; For the course 'Optimierung und Simulation' at the University of Vienna in the winter term 2015/2016, Group 2, Team 1</p>
+      </div>
+    </footer>
 
     <!-- jQuery Version 1.11.1 -->
     <script src="../js/jquery.js"></script>

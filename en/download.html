@@ -9,7 +9,7 @@
     <meta name="description" content="Simplex Algorithm for the course 'Optimierung und Simulation' at the University of Vienna in the winter term 2015/2016, Group 2, Team 1">
     <meta name="author" content="Raphael Raditsch">
 	
-	<title>Simplex - Geogebra</title>
+	<title>Simplex - Excel-Tutorial</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -37,7 +37,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">Simplex Algorithm</a>
             </div>
-
+			
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
@@ -46,13 +46,13 @@
                     <li>
                         <a href="example.html">Example</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="geogebra.html">Geogebra</a>
                     </li>
 					<li>
                         <a href="program.html">C++ Program</a>
                     </li>
-					<li>
+					<li class="active">
                         <a href="download.html">Download</a>
                     </li>
 					<li>
@@ -64,9 +64,9 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Languages <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="../de/geogebra.html"><span class="flag-icon flag-icon-de"></span> Deutsch</a></li>
-							<li><a href="../en/geogebra.html"><span class="flag-icon flag-icon-gb"></span> English</a></li>
-							<li><a href="../sk/geogebra.html"><span class="flag-icon flag-icon-sk"></span> slovenský</a></li>
+							<li><a href="../de/tutorial.html"><span class="flag-icon flag-icon-de"></span> Deutsch</a></li>
+							<li><a href="../en/tutorial.html"><span class="flag-icon flag-icon-gb"></span> English</a></li>
+							<li><a href="../sk/tutorial.html"><span class="flag-icon flag-icon-sk"></span> slovenský</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -78,36 +78,21 @@
 
     <!-- Page Content -->
     <div class="container">
-	
-		<div class="row">
-	
-			<div id="loading" style="color:red">Loading Geogebra...</div>
-			
-			<div id="applet_container1"></div>
-			
-			<script type="text/javascript">
 
-
-				window.onload = function() {
-					gg = new GGBApplet({material_id: "489"}, true);
-					gg.inject('applet_container1', 'preferHTML5');
-				};
-				function  ggbOnInit()
-				{
-					$('#loading').hide();
-				}
-
-			</script>
-			<em>Copyright Kathryn Brenneman; Found on <a target="_blank" href="https://tube.geogebra.org/material/show/id/489">https://tube.geogebra.org/material/show/id/489</a></em>
-			<br>
-			<br>
-			In this interactive GeoGebra-Application you can adjust the slider of the objective function until it meets the optimum.
-			<br>
-			It is easy to see how the different constraints form the polytope, which is solved with the help of the Simplex Algorithm.
+        <div class="row">
+			<div class="col-lg-12">
+                <h1 class="page-header">Downloads</h1>
+            </div>
+			<div class="col-lg-8">
+				<p>Download of our Project about the Simplex-Algorithm: <a target="_blank" href="../files/Projekt.zip">Projekt.zip</a></p>
+				<p>Download the Source of this Website: <a target="_blank" href="../files/Website.zip">Website.zip</a></p>
+				<p>Download our Paper about the Simplex-Algorithm (it's in German): <a target="_blank" href="../files/Paper.pdf">Paper.pdf</a>
+				<p>Download our C++ Program: <a target="_blank" href="../files/Program.zip">Program.zip</a>
+			</div>
 		</div>
 
     </div>
-	
+    
 	<!-- Footer -->
 	<footer class="footer">
       <div class="container">
@@ -120,9 +105,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
-    
-    <!-- GeoGebra JavaScript -->
-    <script type="text/javascript" src="http://www.geogebratube.org/scripts/deployggb.js"></script>
 
 </body>
 

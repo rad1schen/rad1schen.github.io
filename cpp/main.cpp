@@ -6,7 +6,6 @@ using namespace std;
 
 int main() {
 
-
     string pathtosimplex;
     // variable responsible for the input instructions for the program
     char eingabe = '#';
@@ -14,7 +13,6 @@ int main() {
     bool beenden = false;
     // variables for the specification of what type of optimization problem we want to calculate
     bool minimum = false;
-    bool sensitivity = false;
     // pointer to the solution array in which the feasible solution is saved
     double* solution;
 
@@ -40,8 +38,11 @@ int main() {
             {
                 cout << "Geben Sie den Pfad zum Simplex-File an:" << endl;
                 cin >> pathtosimplex; //file path input
-
-                cout << "Handelt es sich um ein Minimumproblem? (j/n)" << endl;
+                minimum = false;
+                cout << "Handelt es sich um ein Minimumproblem in der Form:" << endl
+                << "cTx -> min" << endl
+                << "Ax >= b" << endl
+                << "x >= 0" << endl << "(j/n)" << endl;
                 cin >> eingabe;
 
                 if(eingabe == 'j')
@@ -77,25 +78,7 @@ int main() {
                         file >> b[i];
                     }
 
-                    /*
-                     * Ausgabe der Eingabe
 
-                    cout << n << " " << k << endl;
-
-                    for (int i = 0; i < k; ++i) {
-                        for (int j = 0; j < n; ++j) {
-                            cout << " " << matrice[i][j];
-                        }
-                        cout << " <= " << b[i];
-                        cout << endl;
-                    }
-
-                    for (int l = 0; l < n; ++l)
-                        cout << " " << c[l];
-
-                    cout << endl << endl;
-
-                    */
 
                     /* Minimum durch angabe eines primalen Problems der form */
                     if (minimum) {
@@ -119,7 +102,7 @@ int main() {
                         k = temp;
 
                         solution = lpsolve( n, b, k, matrice, c);
-                        minimum = false;
+                        minimum = true;
                     }
                     else
                         // call of the function that solves the optimization problem
@@ -143,6 +126,7 @@ int main() {
                     for (int i = 0; i < k; ++i)
                         delete matrice[i];
                     delete matrice;
+
                 }
                 else {
                     // "if exception" - file path check

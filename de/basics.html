@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Simplex Algorithm for the course 'Optimierung und Simulation' at the University of Vienna in the winter term 2015/2016, Group 2, Team 1">
+    <meta name="author" content="Raphael Raditsch">
+	
 	<title>Simplex - Grundlagen</title>
+	
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+	
 	<!-- Flags -->
-	<link href="../assets/docs.css" rel="stylesheet">
-    <link href="../css/flag-icon.css" rel="stylesheet">
+    <link href="../css/flag-icon.min.css" rel="stylesheet">
+	
 	<!-- Custom CSS -->
 	<link href="../css/custom.css" rel="stylesheet">
 	<link href="../css/table.css" rel="stylesheet">
+	
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
                     <span class="sr-only">Navigation umschalten</span>
@@ -28,9 +34,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Simplex Algorithm</a>
+                <a class="navbar-brand" href="index.html">Simplex Algorithmus</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active">
@@ -39,9 +45,6 @@
                     <li>
                         <a href="example.html">Beispiel</a>
                     </li>
-					<li>
-                        <a href="tutorial.html">Excel-Tutorial</a>
-                    </li>
                     <li>
                         <a href="geogebra.html">Geogebra</a>
                     </li>
@@ -49,12 +52,16 @@
                         <a href="program.html">C++ Programm</a>
                     </li>
 					<li>
+                        <a href="download.html">Download</a>
+                    </li>
+					<li>
                         <a href="about.html">Über uns</a>
                     </li>
                 </ul>
+				
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Languages <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sprachen <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="../de/basics.html"><span class="flag-icon flag-icon-de"></span> Deutsch</a></li>
 							<li><a href="../en/basics.html"><span class="flag-icon flag-icon-gb"></span> English</a></li>
@@ -63,9 +70,9 @@
 					</li>
 				</ul>
             </div>
-            <!-- /.navbar-collapse -->
+
         </div>
-        <!-- /.container -->
+
     </nav>
     <!-- Page Content -->
     <div class="container">
@@ -75,60 +82,60 @@
             </div>
             <div class="col-lg-12">
                 <ol>
-					<li>Zuerst muss man die Bedingungen festlegen:</li>
-					<li>After the first necessary step, we begin shaping the Standard form
+					<li>Zuerst muss man die Bedingungen festlegen</li>
+					<li>Nach diesem ersten Schritt beginnen wir die Standardform festzulegen
 						<ul>
-							<li>creation is only allowed by setting constraints</li>
+							<li>nur nach dem Festlegen der Bedingungen erlaubt</li>
 						</ul>
 					</li>
-					<li>Followed by creating the Extended Standard Form
+					<li>Danach wird die erweiterte Standardform erstellt
 	            		<ul>
-							<li>formed via introduction of Slack/Surplus variables</li>
-							<li>represented by fulfilling the following rules:
+							<li>Überschussvariablen werden eingeführt</li>
+							<li>dargestellt nach Erfüllen folgender Regeln:
 								<ul class="list-unstyled">
-									<li>x Non-negative constraints of all variables</li>
-									<li>x All remaining constraints expressed as equalities</li>
-									<li>x RHS vector being non-negative</li>
+									<li>x Nicht-Negative Bedingungen aller Variablen</li>
+									<li>x Alle übriggebliebenen Bedingungen werden als Gleichungen formuliert</li>
+									<li>x RHS Vektor ist nicht-negativ</li>
 								</ul>
 							</li>
 	            		</ul>
 					</li>
-					<li>Forming the Canonic “Simplex” Tableau</li>
-					<li>Performing pivot operations
+					<li>Das kanonische “Simplex” Tableau wird geformt</li>
+					<li>Pivot Operationen werden asugeführt
 	            		<ul>
-							<li>choosing the pivot column (via most negative number in the bottom row)</li>
-							<li>choosing the pivot row (via dividing RHS by the row value and choosing the lowest result)</li>
-							<li>making these two into the pivot (or pivoting point) and turning its value to 1</li>
-							<li>making every value “above” and “below” to 0</li>
-							<li>repeating this cycle until there are no negative numbers in the bottom row</li>
+							<li>Die Pivot-Spalte wird ausgewählt (jene mit der am meisten negativen Nummer in der Untersten Reihe)</li>
+							<li>Die Pivot-Zeile wird ausgewählt (via dividing RHS by the row value and choosing the lowest result)</li>
+							<li>Diese 2 bestimmen den Pivot und wandeln dessen Wert auf 1 um</li>
+							<li>Jeder Wert "darüber" und "darunter" wird 0</li>
+							<li>Das Ganze wird solange ausgeführt bis es keine negativen Nummern in der Untersten Reihe mehr gibt.</li>
 	            		</ol>
 					</li>
 	        	</ol>
             </div>
 			<div class="col-lg-12">
-                <h3 class="page-header">Now a little example..</h3>
+                <h3 class="page-header">Nun ein kleines Beispiel..</h3>
             </div>
             <div class="col-lg-12">
-				Our business delivers 3 kinds of products, with the price:
+				Unser Unternhemen liefert 3 verschiedene Produkte, mit den Preisen:
 				<ul>
 					<li><strong>A: 7€</strong></li>
 					<li><strong>B: 8€</strong></li>
 					<li><strong>C: 10€</strong></li>
 				</ul>
-				Fabrication time (up to maximum of 1000 hours) for each product:
+				Produktionszeit (bis zu 1000h) für jedes Produkt:
 				<ul>
 					<li><strong>A: 2h</strong></li>
 					<li><strong>B: 3h</strong></li>
 					<li><strong>C: 2h</strong></li>
 				</ul>
-				Assembly time (up to maximum of 800 hours) for each product:
+				Fertigungszeit (bis zu 800h) für jedes Produkt:
 				<ul>
 					<li><strong>A: 1h</strong></li>
 					<li><strong>B: 1h</strong></li>
 					<li><strong>C: 2h</strong></li>
 				</ul>
-				<h4>Solving process:</h4>
-				What needs to be done first, is determining the to-be-optimized scenario and constraints, which leads us to the following Standard Form:
+				<h4>Lösungsweg:</h4>
+				Zuerst einmal bestimmen wir was wir optimieren wollen, und die Variablen dazu. Dies führt uns zu folgender Standardform:
 			</div>
 			<div class="col-lg-6">
 				<div class="jumbotron">
@@ -138,11 +145,11 @@
 				</div>
 			</div>
 			<div class="col-lg-12">
-				From there, we can continue to create the Extended Standard Form, by fulfilling the following rules:
+				Von dieser aus können wir die Erweiterte Standarform bestimmen, indem wir folgende Regeln erfüllen:
 				<ol>
-					<li>Non-negative constraints of all variables</li>
-					<li>All remaining constraints expressed as equalities</li>
-					<li>RHS vector being non-negative</li>
+					<li>Nicht-Negative Bedingungen aller Variablen</li>
+					<li>Alle übriggebliebenen Bedingungen werden als Gleichungen ausgedrückt</li>
+					<li>RHS-Vektor ist nicht negativ</li>
 				</ol>
 			</div>
 			<div class="col-lg-6">
@@ -153,14 +160,14 @@
 				</div>
 			</div>
 			<div class="col-lg-12">
-				After that, we form the Canonic „Simplex“ Tableau and start performing the pivot operations.
+				Danach formen wir das kanonische „Simplex“ Tableau und führen darauf die Pivot-Operationen aus.
 				<ol>
-					<li>pivot column (most negative bottom row number) -> -10, column number 3</li>
-					<li>pivot row (lowest result of RHS divided by row value) -> 2, row number 2
+					<li>Pivot Spalte (größte negative Nummer in der untersten Reihe) -> -10, Spalte Nummer 3</li>
+					<li>Pivot Reihe (Niedrigstes Resultat der RHS dividiert durch den Reihenwert) -> 2, Reihe Nummer 2
 						<ul>
 							<li>1000:2=500</li>
 							<li>800:2=400</li>
-							<li>*red always indicates pivot values*</li>
+							<li>*Rot Schrift zeigt Pivot-Werte an*</li>
 						</ul>
 						<table class="tg">
 							  <tr>
@@ -205,7 +212,7 @@
 							  </tr>
 						</table>
 					</li>
-					<li>Change the pivot row value to 1 via <math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>1</mn><mn>2</mn></mfrac><msub><mi>R</mi><mn>2</mn></msub><mo>&#x02192;</mo><msub><mi>R</mi><mn>2</mn></msub></math>
+					<li>Ändern des Pivot Zeilen-Wertes zu 1 mit <math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>1</mn><mn>2</mn></mfrac><msub><mi>R</mi><mn>2</mn></msub><mo>&#x02192;</mo><msub><mi>R</mi><mn>2</mn></msub></math>
 						<table class="tg">
 							  <tr>
 								<th class="tg-rqw6"></th>
@@ -249,7 +256,7 @@
 							  </tr>
 						</table>
 					</li>
-					<li>Transforming everything above and below the 1 to 0 first via <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>-</mo><mn>2</mn><mi>R</mi><mn>2</mn><mo>&#x000A0;</mo><mo>+</mo><mo>&#x000A0;</mo><mi>R</mi><mn>1</mn><mo>&#x000A0;</mo><mo>&#x02192;</mo><mo>&#x000A0;</mo><mi>R</mi><mn>1</mn></math>
+					<li>Alles über und unter der 1 zu 0 transformeiren mittels <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>-</mo><mn>2</mn><mi>R</mi><mn>2</mn><mo>&#x000A0;</mo><mo>+</mo><mo>&#x000A0;</mo><mi>R</mi><mn>1</mn><mo>&#x000A0;</mo><mo>&#x02192;</mo><mo>&#x000A0;</mo><mi>R</mi><mn>1</mn></math>
 						<table class="tg">
 							  <tr>
 								<th class="tg-rqw6"></th>
@@ -293,9 +300,9 @@
 							  </tr>
 						</table>
 					</li>
-					<li>And then via <math xmlns="http://www.w3.org/1998/Math/MathML"><mn>10</mn><mi>R</mi><mn>2</mn><mo>&#x000A0;</mo><mo>+</mo><mo>&#x000A0;</mo><mi>R</mi><mn>3</mn><mo>&#x000A0;</mo><mo>&#x02192;</mo><mo>&#x000A0;</mo><mi>R</mi><mn>3</mn></math></li>
-					<li>Replacing the pivot row variable with the pivot column variable</li>
-					<li>Repeating the whole process by choosing a new pivot column and row
+					<li>Danach wird mit <math xmlns="http://www.w3.org/1998/Math/MathML"><mn>10</mn><mi>R</mi><mn>2</mn><mo>&#x000A0;</mo><mo>+</mo><mo>&#x000A0;</mo><mi>R</mi><mn>3</mn><mo>&#x000A0;</mo><mo>&#x02192;</mo><mo>&#x000A0;</mo><mi>R</mi><mn>3</mn></math></li>
+					<li>die Pivot Reihen-Variable mit der Pivot-Spalten-Variable ersetzt</li>
+					<li>Wiederholung des Prozesses durch Bestimmung der neuen Pivot Spalte und Reihe
 						<table class="tg">
 							  <tr>
 								<th class="tg-rqw6"></th>
@@ -428,7 +435,7 @@
 							  </tr>
 						</table>
 					</li>
-					<li>Again, repeating the whole pivot operations process
+					<li>Nochmalige Ausführung des Pivot Prozesses
 						<table class="tg">
 							  <tr>
 								<th class="tg-rqw6"></th>
@@ -561,18 +568,18 @@
 							  </tr>
 						</table>
 					</li>
-					<li>Look at the LHS variables and set them to RHS values
+					<li>Nun schauen wir auf die LHS Variablen und setzen sie auf RHS Werte
 						<ul>
 							<li>x1 = 200</li>
 							<li>x3 = 300</li>
 						</ul>
 					</li>
-					<li>Look at the value in the lower right corner
+					<li>Der Wert in der Ecke rechts unten
 						<ul>
 							<li>p = 4400</li>
 						</ul>
 					</li>
-					<li>Set other values to 0
+					<li>Alle anderen Werte auf 0 setzen
 						<ul>
 							<li>x2 = 0</li>
 							<li>s1 = 0</li>
@@ -581,13 +588,23 @@
 					</li>
 				</ol>
 				<br>
-				This leads to the solution of maximum profit of 4400EUR in the scenario of creating 200 pieces of product A, 0 pieces of product B, 300 pieces of product C, with both slack assembly and slack fabrication time being 0.					
+				Das führt uns zu der Lösung das der maximale Profit 4400€ beträgt, wenn man 200 Stück des Produktes A, 0 Stück des Produktes B und 300 Stück des Produktes C herstellt.			
 			</div>
         </div>
     </div>
+	
+	<!-- Footer -->
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">&copy; For the course 'Optimierung und Simulation' at the University of Vienna in the winter term 2015/2016, Group 2, Team 1</p>
+      </div>
+    </footer>
+	
     <!-- jQuery Version 1.11.1 -->
     <script src="../js/jquery.js"></script>
+	
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
+	
 </body>
 </html>

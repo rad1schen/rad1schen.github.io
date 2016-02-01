@@ -39,14 +39,15 @@ private:
 public:
     Tableau(int n, double* c, int k, double** A, double* b);
     ~Tableau();
-    int getN() { return tableauColumns - tableauRows; }
-    int getK() { return tableauRows - 1; }
+    double* solutionArray;
+    double* shadowArray;
 
     void findPivot();
     void simplexStep();
     bool checkOptimum();
 
     double* solution();
+    double* shadowPrices();
     void printTableau();
 };
 
